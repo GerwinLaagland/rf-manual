@@ -17,7 +17,7 @@ nav:
       - install/index.md
   - Syntax:
       - syntax/index.md
-      - Syntax: syntax/syntax.md
+      - Test Data: syntax/data.md
       - Creating tests: syntax/tests.md
       - Creating tasks: syntax/tasks.md
       - Creating suites: syntax/suites.md

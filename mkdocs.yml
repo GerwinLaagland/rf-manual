@@ -15,19 +15,19 @@ nav:
   - Manual: index.md
   - Install:
       - install/index.md
-  - Data:
-      - data/index.md
-      - Syntax: data/syntax.md
-      - Creating tests: data/tests.md
-      - Creating tasks: data/tasks.md
-      - Creating suites: data/suites.md
-      - Using libraries: data/libraries.md
-      - Variables: data/variables.md
-      - User keywords: data/user-keywords.md
-      - Resource files: data/resource-files.md
-      - Variable files: data/variable-files.md
-      - Control structures: data/control.md
-      - Advanced features: data/advanced.md
+  - Syntax:
+      - syntax/index.md
+      - Syntax: syntax/syntax.md
+      - Creating tests: syntax/tests.md
+      - Creating tasks: syntax/tasks.md
+      - Creating suites: syntax/suites.md
+      - Using libraries: syntax/libraries.md
+      - Variables: syntax/variables.md
+      - User keywords: syntax/user-keywords.md
+      - Resource files: syntax/resource-files.md
+      - Variable files: syntax/variable-files.md
+      - Control structures: syntax/control.md
+      - Advanced features: syntax/advanced.md
   - Execution:
       - execution/index.md
       - Basic usage: execution/basics.md

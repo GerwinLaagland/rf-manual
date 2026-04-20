@@ -1,12 +1,12 @@
-mkdocs < 2.0
-mkdocs-material[imaging]
-mkdocstrings[python]
+black  # Needed by mkdocstrings for formatting signatures
+mike
+mkdocs-ezglossary-plugin
+mkdocs-exclude
 mkdocs-gen-files
 mkdocs-literate-nav
+mkdocs-material[imaging]
 mkdocs-section-index
-mkdocs-exclude
-mkdocs-ezglossary-plugin
-mike
-black  # Needed by mkdocstrings for formatting signatures
+mkdocstrings[python]
+properdocs
 
 telnetlib-313-and-up; python_version >= '3.13'

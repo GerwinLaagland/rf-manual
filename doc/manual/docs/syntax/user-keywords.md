@@ -94,7 +94,7 @@ splitting to multiple lines, and other features as [test case documentation](tes
 This setting documents the user keyword in the test data. It is also shown
 in a more formal keyword documentation, which the [Libdoc](../extend/libdoc.md#libdoc) tool can create
 from [resource files](resource-files.md#resource-files). Finally, the first logical row of the documentation,
-until the first empty row, is shown as a keyword documentation in [test logs](#test-logs).
+until the first empty row, is shown as a keyword documentation in [test logs](../execution/results.md#log-file).
 
 ```robotframework
 *** Keywords ***

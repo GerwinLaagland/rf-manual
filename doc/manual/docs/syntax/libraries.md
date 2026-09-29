@@ -169,7 +169,7 @@ library in the Setting section and when using the *Import Library*{.name} keywor
     to a library was `WITH NAME` instead of `AS`. The old syntax continues
     to work, but it is considered deprecated and will eventually be removed.
 
-## Standard libraries
+## Using standard libraries
 
 Some test libraries are distributed with Robot Framework and these
 libraries are called *standard libraries*. The [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) library is special,
@@ -206,7 +206,7 @@ Robot Framework natively.
 See separate [Remote library interface](../extend/remote.md#remote-library-interface) section for more information
 about this concept.
 
-## External libraries
+## Using external libraries
 
 Any test library that is not one of the standard libraries is, by
 definition, *an external library*. The Robot Framework open source community

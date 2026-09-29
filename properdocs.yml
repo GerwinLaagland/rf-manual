@@ -35,6 +35,7 @@ nav:
       - Task execution: execution/tasks.md
       - Configuring execution: execution/configuration.md
       - Execution artifacts: execution/results.md
+      - Post-processing: execution/post-processing.md
   - Libraries:
       - libraries/index.md
   - Extend:
@@ -58,6 +59,7 @@ nav:
       - appendix/doc-format.md
       - appendix/time-format.md
       - appendix/registrations.md
+      - appendix/boolean-arguments.md
   - Glossary: glossary.md
 
 extra_css:

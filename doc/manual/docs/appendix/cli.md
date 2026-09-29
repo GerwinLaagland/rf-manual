@@ -340,7 +340,7 @@ are listed.
 
 `ROBOT_OPTIONS` and `REBOT_OPTIONS`
 : Space separated list of default options to be placed
-    [in front of any explicit options](../execution/basics.md#robot-options-and-rebot-options-environment-variables) on the command line.
+    [in front of any explicit options](../execution/basics.md#robot_options-and-rebot_options-environment-variables) on the command line.
 
 `ROBOT_SYSLOG_FILE`
 : Path to a [syslog](../execution/results.md#system-log) file where Robot Framework writes internal

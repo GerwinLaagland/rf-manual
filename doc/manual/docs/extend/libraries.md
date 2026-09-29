@@ -2692,7 +2692,7 @@ libraries using the [dynamic library API](dynamic.md#dynamic-library-api) as wel
 The first logical line of a keyword documentation, until the first empty line,
 is used for a special purpose and should contain a short overall description
 of the keyword. It is used as a *short documentation* by [Libdoc](libdoc.md#libdoc) (for example,
-as a tool tip) and also shown in the [test logs](#test-logs).
+as a tool tip) and also shown in the [test logs](../execution/results.md#log-file).
 
 Libdoc supports [argument, return value and exception documentation](../execution/basics.md#errors-and-warnings-during-execution)
 using [Google Style](../syntax/data.md#style) documentation conventions. The same syntax is
@@ -2744,7 +2744,7 @@ easier.
 Since libraries are normal programming code, they can be packaged
 using normal packaging tools. For information about packaging and
 distributing Python code see https://packaging.python.org/. When such
-a package is installed using [pip](#pip) or other tools, it is automatically
+a package is installed using [pip](https://pip.pypa.io) or other tools, it is automatically
 in the [module search path](../execution/configuration.md#module-search-path).
 
 ### Deprecating keywords

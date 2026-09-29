@@ -456,7 +456,7 @@ always possible to access dictionary values using syntax like
 
 !!! note
     Using YAML files with Robot Framework requires [PyYAML](https://pyyaml.org) module to be installed. You can typically
-    install it with [pip](#pip) like `pip install pyyaml`.
+    install it with [pip](https://pip.pypa.io) like `pip install pyyaml`.
 
 ### Variable file as JSON
 

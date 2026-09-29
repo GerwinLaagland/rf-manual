@@ -21,7 +21,7 @@ There are two main reasons for using the remote library API:
   for various languages like Python, Java, Ruby, .NET, and so on.
 
 The remote library interface is provided by the Remote library that is
-one of the [standard libraries](../syntax/libraries.md#standard-libraries).
+one of the [standard libraries](../syntax/libraries.md#using-standard-libraries).
 This library does not have any keywords of its own, but it works
 as a proxy between the core framework and keywords implemented
 elsewhere. The Remote library interacts with actual library
@@ -80,8 +80,7 @@ is shorter than keyword execution time will interrupt the keyword.
     Windows](https://stackoverflow.com/questions/14504450/pythons-xmlrpc-extremely-slow-one-second-per-call).
 
 !!! note
-    If the URI contains no path after the server address, the [XML-RPC
-    module](#xml-rpc-module) used by the Remote library will use `/RPC2` path by
+    If the URI contains no path after the server address, the [XML-RPC module](https://docs.python.org/3/library/xmlrpc.client.html) used by the Remote library will use `/RPC2` path by
     default. In practice using `http://127.0.0.1:8270` is thus identical
     to using `http://127.0.0.1:8270/RPC2`. Depending on the remote server
     this may or may not be a problem. No extra path is appended if the

@@ -104,14 +104,15 @@ Robot Framework supports also [JSON data format](#json-data-format) that is targ
 more for tool developers than normal Robot Framework users. Only JSON files
 with the custom `.rbt`{.file} extension are parsed by default.
 
-Earlier Robot Framework versions supported data also in HTML and TSV formats.
-The TSV format still works if the data is compatible with the [space separated
-format](#space-separated-format), but the support for the HTML format has been removed altogether.
-If you encounter such data files, you need to convert them to the plain text
-format to be able to use them with Robot Framework 3.2 or newer. The easiest
-way to do that is using the [Tidy](../extend/tidy.md#tidy) tool, but you must use the version included
-with Robot Framework 3.1 because newer versions do not understand the HTML
-format at all.
+Earlier Robot Framework versions also supported HTML and TSV data formats.
+TSV data remains usable if it is compatible with the
+[space separated format](#space-separated-format).
+
+HTML data must be converted to plain text before it can be used with
+Robot Framework 3.2 or newer. For this legacy conversion, use the Tidy tool
+included with Robot Framework 3.1.2. See
+[Converting legacy HTML files](https://robotframework.org/robotframework/3.1.2/RobotFrameworkUserGuide.html#changing-test-data-format)
+for instructions.
 
 <a id="space-separated-format"></a>
 <a id="space-separated-plain-text-format"></a>

@@ -3,8 +3,8 @@
 ## Handling keywords with same names
 
 Keywords that are used with Robot Framework are either [library
-keywords](#library-keywords) or [user keywords](user-keywords.md#creating-user-keywords). The former come from [standard
-libraries](libraries.md#standard-libraries) or [external libraries](libraries.md#external-libraries), and the latter are either
+keywords](libraries.md) or [user keywords](user-keywords.md#creating-user-keywords). The former come from [standard
+libraries](libraries.md#using-standard-libraries) or [external libraries](libraries.md#using-external-libraries), and the latter are either
 created in the same file where they are used or then imported from
 [resource files](resource-files.md#resource-files). When many keywords are in use, it is quite common
 that some of them have the same name, and this section describes how to

@@ -1033,19 +1033,19 @@ The following examples illustrates how to use the most important
 ### Using Robot Framework format
 
 ```python
-src/SupportingTools/LoggingLibrary.py
+--8<-- "extend/examples/LoggingLibrary.py"
 ```
 
-[Click here](#srcsupportingtoolslogginglibraryhtml) to see how the generated documentation looks like.
+[Click here](examples/LoggingLibrary.html) to see how the generated documentation looks like.
 
 
 ### Using Markdown
 
 ```python
-src/SupportingTools/LoggingLibraryMarkdown.py
+--8<-- "extend/examples/LoggingLibraryMarkdown.py"
 ```
 
-[Click here](#srcsupportingtoolslogginglibrarymarkdownhtml) to see how the generated documentation looks like.
+[Click here](examples/LoggingLibraryMarkdown.html) to see how the generated documentation looks like.
 
 
 ### Standard library documentation

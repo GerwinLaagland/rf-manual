@@ -380,7 +380,7 @@ like can be seen [above](#libdoc-html-documentation), and there are also [bit lo
 the end of this chapter.
 
 ```python
-src/SupportingTools/ExampleLibrary.py
+--8<-- "extend/examples/ExampleLibrary.py"
 ```
 
 !!! tip

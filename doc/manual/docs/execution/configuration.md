@@ -689,7 +689,7 @@ preserved, and the X is given from the command line along with an optional
 start index.
 
 ```python
-../api/code_examples/SelectEveryXthTest.py
+--8<-- "execution/examples/SelectEveryXthTest.py"
 ```
 
 If the above pre-run modifier is in a file `SelectEveryXthTest.py`{.file} and
@@ -710,7 +710,7 @@ In practice it works like a negative version of the built-in `--test`{.option}
 option.
 
 ```python
-../api/code_examples/ExcludeTests.py
+--8<-- "execution/examples/ExcludeTests.py"
 ```
 
 Assuming the above modifier is in a file named `ExcludeTests.py`{.file}, it
@@ -731,7 +731,7 @@ This can be accomplished by editing the test data, but pre-run modifiers make
 it easy to do that temporarily for a single run:
 
 ```python
-../api/code_examples/disable.py
+--8<-- "execution/examples/disable.py"
 ```
 
 Assuming that the above modifiers are all in a file named `disable.py`{.file}

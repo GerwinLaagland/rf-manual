@@ -24,7 +24,7 @@ python path/to/robot/ [options] data
 ```
 
 Execution is normally started using the `robot` command created as part of
-[installation](../appendix/doc_format.md#installation). Alternatively it is possible to execute the installed `robot`
+[installation](../install/index.md). Alternatively it is possible to execute the installed `robot`
 module using the selected Python interpreter. This is especially convenient
 if Robot Framework has been installed under multiple Python versions.
 Finally, if you know where the installed `robot` directory exists, it can

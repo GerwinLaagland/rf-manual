@@ -1945,13 +1945,15 @@ The `robot.api.deco.not_keyword` decorator can be used for
 ### Using custom decorators
 
 When implementing keywords, it is sometimes useful to modify them with
-[Python decorators](https://docs.python.org/library/functools.html#functools.wraps). However, decorators often modify function signatures
+[Python decorators](https://docs.python.org/3/library/functools.html#functools.wraps). However, decorators often modify function signatures
 and can thus confuse Robot Framework's introspection when determining which
 arguments keywords accept. This is especially problematic when creating
 library documentation with [Libdoc](libdoc.md#libdoc) and when using external tools like [RIDE](https://github.com/robotframework/RIDE).
-The easiest way to avoid this problem is decorating the
-decorator itself using [functools.wraps](https://pypi.org/project/decorator/). Other solutions include using
-external modules like [decorator](https://wrapt.readthedocs.io) and [wrapt](../syntax/user_keywords.md#embedding-arguments-into-keyword-name) that allow creating fully
+The easiest way to avoid this problem is to apply
+[functools.wraps](https://docs.python.org/3/library/functools.html#functools.wraps)
+to the wrapper function inside the decorator. Other solutions include using
+external modules like [decorator](https://pypi.org/project/decorator/) and
+[wrapt](https://wrapt.readthedocs.io/en/latest/) that allow creating
 signature-preserving decorators.
 
 !!! note

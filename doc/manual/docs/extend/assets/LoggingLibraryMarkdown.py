@@ -20,7 +20,7 @@ class LoggingLibraryMarkdown:
 
     ```robotframework
     *** Settings ***
-    Library        LoggingLibrary
+    Library        LoggingLibraryMarkdown
 
     *** Test Cases ***
     Use default level
@@ -53,8 +53,8 @@ class LoggingLibraryMarkdown:
 
         ```robotframework
         *** Settings ***
-        Library        LoggingLibrary             # Use the default level (INFO)
-        Library        LoggingLibrary    DEBUG    # Use the given level
+        Library        LoggingLibraryMarkdown             # Use the default level (INFO)
+        Library        LoggingLibraryMarkdown    DEBUG    # Use the given level
         ```
         """
         self.default_level = self._verify_level(default_level)

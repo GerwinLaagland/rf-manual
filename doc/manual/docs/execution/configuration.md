@@ -689,15 +689,15 @@ preserved, and the X is given from the command line along with an optional
 start index.
 
 ```python
---8<-- "execution/assets/select_every_xth_test.py"
+--8<-- "execution/assets/SelectEveryXthTest.py"
 ```
 
-If the above pre-run modifier is in a file `select_every_xth_test.py`{.file} and
+If the above pre-run modifier is in a file `SelectEveryXthTest.py`{.file} and
 the file is in the [module search path](#module-search-path), it could be used like this:
 
 ```text
 # Specify the modifier as a path. Run every second test.
-robot --prerunmodifier path/to/select_every_xth_test.py:2 tests.robot
+robot --prerunmodifier path/to/SelectEveryXthTest.py:2 tests.robot
 
 # Specify the modifier as a name. Run every third test, starting from the second.
 robot --prerunmodifier SelectEveryXthTest:3:1 tests.robot
@@ -710,18 +710,18 @@ In practice it works like a negative version of the built-in `--test`{.option}
 option.
 
 ```python
---8<-- "execution/assets/exclude_tests.py"
+--8<-- "execution/assets/ExcludeTests.py"
 ```
 
-Assuming the above modifier is in a file named `exclude_tests.py`{.file}, it
+Assuming the above modifier is in a file named `ExcludeTests.py`{.file}, it
 could be used like this:
 
 ```text
 # Exclude test named 'Example'.
-robot --prerunmodifier path/to/exclude_tests.py:Example tests.robot
+robot --prerunmodifier path/to/ExcludeTests.py:Example tests.robot
 
 # Exclude all tests ending with 'something'.
-robot --prerunmodifier path/to/exclude_tests.py:*something tests.robot
+robot --prerunmodifier path/to/ExcludeTests.py:*something tests.robot
 ```
 
 ### Example: Disable setups and teardowns

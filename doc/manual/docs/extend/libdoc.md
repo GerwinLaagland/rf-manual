@@ -380,7 +380,7 @@ like can be seen [above](#libdoc-html-documentation), and there are also [bit lo
 the end of this chapter.
 
 ```python
---8<-- "extend/assets/example_library.py"
+--8<-- "extend/assets/ExampleLibrary.py"
 ```
 
 !!! tip
@@ -1033,19 +1033,19 @@ The following examples illustrates how to use the most important
 ### Using Robot Framework format
 
 ```python
---8<-- "extend/assets/logging_library.py"
+--8<-- "extend/assets/LoggingLibrary.py"
 ```
 
-[Click here](assets/logging_library.html) to see how the generated documentation looks like.
+[View the generated Robot Framework documentation](assets/logging_library.html).
 
 
 ### Using Markdown
 
 ```python
---8<-- "extend/assets/logging_library_markdown.py"
+--8<-- "extend/assets/LoggingLibraryMarkdown.py"
 ```
 
-[Click here](assets/logging_library_markdown.html) to see how the generated documentation looks like.
+[View the generated Markdown documentation](assets/logging_library_markdown.html).
 
 
 ### Standard library documentation

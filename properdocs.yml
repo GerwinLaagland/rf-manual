@@ -23,9 +23,9 @@ nav:
       - Creating suites: syntax/suites.md
       - Using libraries: syntax/libraries.md
       - Variables: syntax/variables.md
-      - User keywords: syntax/user-keywords.md
-      - Resource files: syntax/resource-files.md
-      - Variable files: syntax/variable-files.md
+      - User keywords: syntax/user_keywords.md
+      - Resource files: syntax/resource_files.md
+      - Variable files: syntax/variable_files.md
       - Control structures: syntax/control.md
       - Advanced features: syntax/advanced.md
   - Execution:
@@ -35,7 +35,7 @@ nav:
       - Task execution: execution/tasks.md
       - Configuring execution: execution/configuration.md
       - Execution artifacts: execution/results.md
-      - Post-processing: execution/post-processing.md
+      - Post-processing: execution/post_processing.md
   - Libraries:
       - libraries/index.md
   - Extend:
@@ -56,10 +56,10 @@ nav:
       - appendix/cli.md
       - appendix/translations.md
       - appendix/expressions.md
-      - appendix/doc-format.md
-      - appendix/time-format.md
+      - appendix/doc_format.md
+      - appendix/time_format.md
       - appendix/registrations.md
-      - appendix/boolean-arguments.md
+      - appendix/boolean_arguments.md
   - Glossary: glossary.md
 
 extra_css:

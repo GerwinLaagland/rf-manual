@@ -30,7 +30,7 @@ in the following sections.
 ### Setups and teardowns
 
 Setups and teardowns can be used on [test suite](../syntax/suites.md#suite-setup-and-teardown), [test case](../syntax/tests.md#test-setup-and-teardown) and
-[user keyword](../syntax/user-keywords.md#user-keyword-setup-and-teardown) levels.
+[user keyword](../syntax/user_keywords.md#user-keyword-setup-and-teardown) levels.
 
 #### Suite setup
 

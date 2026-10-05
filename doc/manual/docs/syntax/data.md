@@ -25,8 +25,8 @@ The hierarchical structure for arranging test cases is built as follows:
 In addition to this, there are:
 
 - [Test libraries](libraries.md#using-test-libraries) containing the lowest-level keywords.
-- [Resource files](resource-files.md#resource-files) with [variables](variables.md#variables) and higher-level [user keywords](user-keywords.md#creating-user-keywords).
-- [Variable files](variable-files.md#variable-files) to provide more flexible ways to create variables
+- [Resource files](resource_files.md#resource-files) with [variables](variables.md#variables) and higher-level [user keywords](user_keywords.md#creating-user-keywords).
+- [Variable files](variable_files.md#variable-files) to provide more flexible ways to create variables
   than resource files.
 
 Test case files, test suite initialization files and resource files are
@@ -44,11 +44,11 @@ called tables, listed below:
 
 | Section | Used for |
 | --- | --- |
-| Settings | 1) Importing [test libraries](libraries.md#using-test-libraries), [resource files](resource-files.md#resource-files) and [variable files](variable-files.md#variable-files).<br>2) Defining metadata for [test suites](suites.md#creating-test-suites) and [test cases](tests.md#creating-test-cases). |
+| Settings | 1) Importing [test libraries](libraries.md#using-test-libraries), [resource files](resource_files.md#resource-files) and [variable files](variable_files.md#variable-files).<br>2) Defining metadata for [test suites](suites.md#creating-test-suites) and [test cases](tests.md#creating-test-cases). |
 | Variables | Defining [variables](variables.md#variables) that can be used elsewhere in the test data. |
 | Test Cases | [Creating test cases](tests.md#creating-test-cases) from available keywords. |
 | Tasks | [Creating tasks](tasks.md#creating-tasks) using available keywords. Single file can only contain either tests or tasks. |
-| Keywords | [Creating user keywords](user-keywords.md#creating-user-keywords) from existing lower-level keywords |
+| Keywords | [Creating user keywords](user_keywords.md#creating-user-keywords) from existing lower-level keywords |
 | Comments | Additional comments or data. Ignored by Robot Framework. |
 
 Different sections are recognized by their header row. The recommended
@@ -84,7 +84,7 @@ An alternative is using the [pipe separated data format](#pipe-separated-data-fo
 is the pipe character surrounded with spaces (`  |  `{.codesc}).
 
 Suite files typically use the `.robot`{.file} extension, but what files are
-parsed [can be configured](../execution/configuration.md#selecting-files-to-parse). [Resource files](resource-files.md#resource-files) can use the `.robot`{.file}
+parsed [can be configured](../execution/configuration.md#selecting-files-to-parse). [Resource files](resource_files.md#resource-files) can use the `.robot`{.file}
 extension as well, but using the dedicated `.resource`{.file} extension is
 recommended and may be mandated in the future. Files containing non-ASCII
 characters must be saved using the UTF-8 encoding.
@@ -673,9 +673,9 @@ to match the indentation of the starting row and they must always be followed
 by the normal test data separator.
 
 In most places split lines have exact same semantics as lines that are not
-split. Exceptions to this rule are [suite](suites.md#suite-documentation), [test](tests.md#test-case-documentation) and [keyword](user-keywords.md#user-keyword-documentation) documentation
+split. Exceptions to this rule are [suite](suites.md#suite-documentation), [test](tests.md#test-case-documentation) and [keyword](user_keywords.md#user-keyword-documentation) documentation
 as well [suite metadata](suites.md#free-suite-metadata). With them split values are automatically
-[joined together with the newline character](../appendix/doc-format.md#newlines) to ease creating multiline
+[joined together with the newline character](../appendix/doc_format.md#newlines) to ease creating multiline
 values.
 
 The `...` syntax allows also splitting variables in the [Variable section](variables.md#variable-section).

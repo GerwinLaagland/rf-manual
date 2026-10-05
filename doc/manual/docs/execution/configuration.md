@@ -1,7 +1,7 @@
 # Configuring execution
 
 This section explains different command line options that can be used
-for configuring the [test execution](basics.md#starting-test-execution) or [post-processing outputs](post-processing.md#post-processing-outputs).
+for configuring the [test execution](basics.md#starting-test-execution) or [post-processing outputs](post_processing.md#post-processing-outputs).
 Options related to the generated [execution artifacts](results.md#execution-artifacts) are discussed in
 the next section.
 
@@ -137,7 +137,7 @@ the [Parser interface](../extend/parsing.md#parser-interface) section.
 
 Robot Framework offers several command line options for selecting
 which test cases to execute. The same options work also when [executing
-tasks](tasks.md#executing-tasks) and when post-processing outputs with [Rebot](post-processing.md#rebot).
+tasks](tasks.md#executing-tasks) and when post-processing outputs with [Rebot](post_processing.md#rebot).
 
 <a id="selects-the-test-cases-by-name"></a>
 ### By test names
@@ -350,7 +350,7 @@ now causes undefined results. Using a special value `NONE` as the output is
 same as not specifying this option at all.
 
 !!! tip
-    Re-execution results and original results can be [merged together](post-processing.md#merging-results)
+    Re-execution results and original results can be [merged together](post_processing.md#merging-results)
     using the `--merge`{.option} command line option.
 
 ### Re-executing failed test suites
@@ -385,7 +385,7 @@ created but show zero executed tests. The same option can be used also to
 alter the behavior when an empty directory or a test case file containing
 no tests is executed.
 
-Similar situation can occur also when processing output files with [Rebot](post-processing.md#rebot).
+Similar situation can occur also when processing output files with [Rebot](post_processing.md#rebot).
 It is possible that no test match the used filtering criteria or that
 the output file contained no tests to begin with. By default executing
 Rebot fails in these cases, but it has a separate
@@ -417,7 +417,7 @@ robot --name "Custom name" tests.robot
 
 In addition to [defining documentation in the test data](../syntax/suites.md#suite-documentation), documentation
 of the top-level suite can be given from the command line with the
-option `--doc (-D)`{.option}. The value can contain simple [HTML formatting](../appendix/doc-format.md#documentation-formatting)
+option `--doc (-D)`{.option}. The value can contain simple [HTML formatting](../appendix/doc_format.md#documentation-formatting)
 and must be quoted if it contains spaces.
 
 If the given documentation is a relative or absolute path pointing to an existing
@@ -444,7 +444,7 @@ robot --doc doc.txt tests.robot    # Documentation read from doc.txt if it exits
 [Free suite metadata](../syntax/suites.md#free-suite-metadata) may also be given from the command line with the
 option `--metadata (-M)`{.option}. The argument must be in the format
 `name:value`, where `name` the name of the metadata to set and
-`value` is its value. The value can contain simple [HTML formatting](../appendix/doc-format.md#documentation-formatting) and
+`value` is its value. The value can contain simple [HTML formatting](../appendix/doc_format.md#documentation-formatting) and
 the whole argument must be quoted if it contains spaces.
 This option may be used several times to set multiple metadata values.
 
@@ -550,7 +550,7 @@ are taken into account next time when something is imported.
 ## Setting variables
 
 [Variables](../syntax/variables.md#variables) can be set from the command line either [individually](../syntax/variables.md#command-line-variables)
-using the `--variable (-v)`{.option} option or through [variable files](../syntax/variable-files.md#variable-files)
+using the `--variable (-v)`{.option} option or through [variable files](../syntax/variable_files.md#variable-files)
 with the `--variablefile (-V)`{.option} option. Variables and variable
 files are explained in separate chapters, but the following examples
 illustrate how to use these options:
@@ -582,8 +582,8 @@ In addition to these failures, normal [execution errors](basics.md#errors-and-wa
 for example, when test library or resource file imports cannot be
 resolved.
 
-It is possible to disable dry run validation of specific [user keywords](../syntax/user-keywords.md#creating-user-keywords)
-by adding a special `robot:no-dry-run` [keyword tag](../syntax/user-keywords.md#user-keyword-tags) to them. This is useful
+It is possible to disable dry run validation of specific [user keywords](../syntax/user_keywords.md#creating-user-keywords)
+by adding a special `robot:no-dry-run` [keyword tag](../syntax/user_keywords.md#user-keyword-tags) to them. This is useful
 if a keyword fails in the dry run mode for some reason, but work fine when
 executed normally.
 
@@ -689,15 +689,15 @@ preserved, and the X is given from the command line along with an optional
 start index.
 
 ```python
---8<-- "execution/examples/SelectEveryXthTest.py"
+--8<-- "execution/assets/select_every_xth_test.py"
 ```
 
-If the above pre-run modifier is in a file `SelectEveryXthTest.py`{.file} and
+If the above pre-run modifier is in a file `select_every_xth_test.py`{.file} and
 the file is in the [module search path](#module-search-path), it could be used like this:
 
 ```text
 # Specify the modifier as a path. Run every second test.
-robot --prerunmodifier path/to/SelectEveryXthTest.py:2 tests.robot
+robot --prerunmodifier path/to/select_every_xth_test.py:2 tests.robot
 
 # Specify the modifier as a name. Run every third test, starting from the second.
 robot --prerunmodifier SelectEveryXthTest:3:1 tests.robot
@@ -710,18 +710,18 @@ In practice it works like a negative version of the built-in `--test`{.option}
 option.
 
 ```python
---8<-- "execution/examples/ExcludeTests.py"
+--8<-- "execution/assets/exclude_tests.py"
 ```
 
-Assuming the above modifier is in a file named `ExcludeTests.py`{.file}, it
+Assuming the above modifier is in a file named `exclude_tests.py`{.file}, it
 could be used like this:
 
 ```text
 # Exclude test named 'Example'.
-robot --prerunmodifier path/to/ExcludeTests.py:Example tests.robot
+robot --prerunmodifier path/to/exclude_tests.py:Example tests.robot
 
 # Exclude all tests ending with 'something'.
-robot --prerunmodifier path/to/ExcludeTests.py:*something tests.robot
+robot --prerunmodifier path/to/exclude_tests.py:*something tests.robot
 ```
 
 ### Example: Disable setups and teardowns
@@ -731,7 +731,7 @@ This can be accomplished by editing the test data, but pre-run modifiers make
 it easy to do that temporarily for a single run:
 
 ```python
---8<-- "execution/examples/disable.py"
+--8<-- "execution/assets/disable.py"
 ```
 
 Assuming that the above modifiers are all in a file named `disable.py`{.file}

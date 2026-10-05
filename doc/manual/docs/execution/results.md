@@ -34,7 +34,7 @@ configure them. As discussed above, result file paths are relative to the
 
 Output files contain all execution results in machine readable XML or JSON
 format. [Log](#log-file), [report](#report-file) and [xUnit](#xunit) files are typically generated based on them,
-and they can also be combined and otherwise post-processed with [Rebot](post-processing.md#rebot).
+and they can also be combined and otherwise post-processed with [Rebot](post_processing.md#rebot).
 Various external tools also process output files to be able to show detailed
 execution information.
 
@@ -46,7 +46,7 @@ execution information.
 The command line option `--output (-o)`{.option} determines the path where
 the output file is created. The path is relative to the [output directory](#output-directory)
 and the default value is `output.xml`{.file} when executing tests.
-When [post-processing outputs](post-processing.md#post-processing-outputs) with Rebot, new output files are not created
+When [post-processing outputs](post_processing.md#post-processing-outputs) with Rebot, new output files are not created
 unless the `--output`{.option} option is explicitly used.
 
 It is possible to disable the output file by using a special value `NONE`
@@ -66,7 +66,7 @@ documented in the `result.json`{.file} [schema file](https://github.com/robotfra
 
 !!! note
     JSON output files are supported during execution starting from
-    Robot Framework 7.2. [Rebot](post-processing.md#rebot) can create them based on XML output
+    Robot Framework 7.2. [Rebot](post_processing.md#rebot) can create them based on XML output
     files already with Robot Framework 7.0.
 
 #### Legacy XML format
@@ -97,15 +97,15 @@ files are created. Unless the special value `NONE` is used,
 log files are always created. The default value is `log.html`{.file}
 and paths are relative to the [output directory](#output-directory).
 
-![An example of beginning of a log file](log_passed.png)
+![An example of beginning of a log file](assets/log_passed.png)
 
 *An example of beginning of a log file*
 
-![An example of a log file with keyword details visible](log_failed.png)
+![An example of a log file with keyword details visible](assets/log_failed.png)
 
 *An example of a log file with keyword details visible*
 
-![An example of a log file with skipped and passed tests](log_skipped.png)
+![An example of a log file with skipped and passed tests](assets/log_skipped.png)
 
 *An example of a log file with skipped and passed tests*
 
@@ -126,11 +126,11 @@ report files are created. Similarly as with log files, reports files are
 automatically created unless `NONE` is used as a value, the default value is
 `report.html`{.file} and values are relative to the [output directory](#output-directory).
 
-![An example report file of successful test execution](report_passed.png)
+![An example report file of successful test execution](assets/report_passed.png)
 
 *An example report file of successful test execution*
 
-![An example report file of failed test execution](report_failed.png)
+![An example report file of failed test execution](assets/report_failed.png)
 
 *An example report file of failed test execution*
 
@@ -275,7 +275,7 @@ threshold level. A special value `NONE` can also be used to
 disable logging altogether.
 
 It is possible to use the `--loglevel`{.option} option also when
-[post-processing outputs](post-processing.md#post-processing-outputs) with Rebot. This allows, for example,
+[post-processing outputs](post_processing.md#post-processing-outputs) with Rebot. This allows, for example,
 running tests initially with the `TRACE` level, and generating smaller
 log files for normal viewing later with the `INFO` level. By default
 all the messages included during execution will be included also with
@@ -295,7 +295,7 @@ in the upper right corner. This allows users to remove messages below chosen
 level from the view. This can be useful especially when running test at
 `TRACE` level.
 
-![An example log showing the visible log level drop down](visible_log_level.png)
+![An example log showing the visible log level drop down](assets/visible_log_level.png)
 
 *An example log showing the visible log level drop down*
 
@@ -390,7 +390,7 @@ different patterns, and the figure below shows a snippet of the resulting
 --tagstatcombine smokeNOTowner-janne*
 ```
 
-![Examples of combined tag statistics](tagstatcombine.png)
+![Examples of combined tag statistics](assets/tagstatcombine.png)
 
 *Examples of combined tag statistics*
 
@@ -431,7 +431,7 @@ figure below shows a snippet of the resulting *Statistics by Tag*{.name} table w
 --tagstatlink owner-*:mailto:%1@domain.com?subject=Acceptance_Tests:Send_Mail
 ```
 
-![Examples of links from tag names](tagstatlink.png)
+![Examples of links from tag names](assets/tagstatlink.png)
 
 *Examples of links from tag names*
 
@@ -472,7 +472,7 @@ multiple times.
 In these situations, command line options `--removekeywords`{.option} and
 `--flattenkeywords`{.option} can be used to dispose or flatten unnecessary keywords.
 They can be used both when [executing test cases](basics.md#executing-test-cases) and when [post-processing
-outputs](post-processing.md#post-processing-outputs). When used during execution, they only affect the log file, not
+outputs](post_processing.md#post-processing-outputs). When used during execution, they only affect the log file, not
 the XML output file. With `rebot` they affect both logs and possibly
 generated new output XML files.
 
@@ -514,7 +514,7 @@ or warnings](../extend/libraries.md#errors-and-warnings) are not removed except 
     case and space insensitive and they can be specified using [tag patterns](basics.md#tag-patterns)
     where `*`, `?` and `[]` are supported as wildcards and `AND`, `OR` and `NOT`
     operators can be used for combining individual tags or patterns together.
-    Can be used both with [library keyword tags](../extend/libraries.md#keyword-tags) and [user keyword tags](../syntax/user-keywords.md#user-keyword-tags).
+    Can be used both with [library keyword tags](../extend/libraries.md#keyword-tags) and [user keyword tags](../syntax/user_keywords.md#user-keyword-tags).
 
 Examples:
 
@@ -617,7 +617,7 @@ rebot --expandkeywords tag:example --expandkeywords tag:another output.xml
 
 ## Setting start and end time of execution
 
-When [combining results](post-processing.md#combining-results) using Rebot, it is possible to set the start
+When [combining results](post_processing.md#combining-results) using Rebot, it is possible to set the start
 and end time of the combined test suite using the options `--starttime`{.option}
 and `--endtime`{.option}, respectively. This is convenient, because by default,
 combined suites do not have these values. When both the start and end time are
@@ -645,7 +645,7 @@ rebot --starttime 20110302-1317 --endtime 20110302-11418 myoutput.xml
 ## Limiting error message length in reports
 
 If a test case fails and has a long error message, the message shown in
-[reports](post-processing.md#creating-reports-logs-and-output-files) is automatically cut from the middle to keep reports easier to
+[reports](post_processing.md#creating-reports-logs-and-output-files) is automatically cut from the middle to keep reports easier to
 read. By default messages longer than 40 lines are cut, but that can be
 configured by using the `--maxerrorlines`{.option} command line option.
 The minimum value for this option is 10, and it is also possible to use

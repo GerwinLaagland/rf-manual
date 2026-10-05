@@ -26,8 +26,8 @@ used, it is an error to execute multiple files so that some have tests and
 others have tasks.
 
 The execution mode is stored in the generated [output file](results.md#output-file) and read by
-[Rebot](post-processing.md#rebot) if outputs are post-processed. The mode can also [be set when
-using Rebot](post-processing.md#controlling-execution-mode) if necessary.
+[Rebot](post_processing.md#rebot) if outputs are post-processed. The mode can also [be set when
+using Rebot](post_processing.md#controlling-execution-mode) if necessary.
 
 ## Task related command line options
 

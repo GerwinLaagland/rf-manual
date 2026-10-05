@@ -269,7 +269,7 @@ def keyword():
 
 Library documentation tool [Libdoc](libdoc.md#libdoc)
 supports documentation in multiple formats. If you want to use something
-else than Robot Framework's own [documentation formatting](../appendix/doc-format.md#documentation-formatting), you can specify
+else than Robot Framework's own [documentation formatting](../appendix/doc_format.md#documentation-formatting), you can specify
 the format in the source code using  `ROBOT_LIBRARY_DOC_FORMAT` attribute
 similarly as [scope](#library-scope) and [version](#library-version) are set with their own
 `ROBOT_LIBRARY_*` attributes.
@@ -688,7 +688,7 @@ attribute also create keywords even if the method name itself would start with
 an underscore.
 
 Setting a custom keyword name can also enable library keywords to accept
-arguments using the [embedded arguments](../syntax/user-keywords.md#user-keyword-tags) syntax.
+arguments using the [embedded arguments](../syntax/user_keywords.md#user-keyword-tags) syntax.
 
 ### Keyword tags
 
@@ -1224,7 +1224,7 @@ Other types cause conversion failures.
 | [bytearray](https://docs.python.org/library/functions.html#func-bytearray) |  |  | [str](https://docs.python.org/library/functions.html#func-str), [bytes](https://docs.python.org/library/functions.html#func-bytes) | Same conversion as with [bytes](https://docs.python.org/library/functions.html#func-bytes), but the result is a [bytearray](https://docs.python.org/library/functions.html#func-bytearray). |  |
 | [datetime](https://docs.python.org/library/datetime.html#datetime.datetime) |  |  | [str](https://docs.python.org/library/functions.html#func-str), [int](https://docs.python.org/library/functions.html#int), [float](https://docs.python.org/library/functions.html#float) | String timestamps are expected to be in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) like format `YYYY-MM-DD hh:mm:ss.mmmmmm`, where any non-digit character can be used as a separator or separators can be omitted altogether. Additionally, only the date part is mandatory, all possibly missing time components are considered to be zeros.<br>Special values `NOW` and `TODAY` (case-insensitive) can be used to get the current local `datetime`. This is new in Robot Framework 7.3.<br>Integers and floats are considered to represent seconds since the [Unix epoch](https://en.wikipedia.org/wiki/Unix_time). | `2022-02-09T16:39:43.632269`<br>`20220209 16:39`<br>`2022-02-09`<br>`now` (current local date and time)<br>`TODAY` (same as above)<br>`${1644417583.632269}` (Epoch time) |
 | [date](https://docs.python.org/library/datetime.html#datetime.date) |  |  | [str](https://docs.python.org/library/functions.html#func-str) | Same timestamp conversion as with [datetime](https://docs.python.org/library/datetime.html#datetime.datetime), but all time components are expected to be omitted or to be zeros.<br>Special values `NOW` and `TODAY` (case-insensitive) can be used to get the current local `date`. This is new in Robot Framework 7.3. | `2018-09-12`<br>`20180912`<br>`today` (current local date)<br>`NOW` (same as above) |
-| [timedelta](https://docs.python.org/library/datetime.html#datetime.timedelta) |  |  | [str](https://docs.python.org/library/functions.html#func-str), [int](https://docs.python.org/library/functions.html#int), [float](https://docs.python.org/library/functions.html#float) | Strings are expected to represent a time interval in one of the time formats Robot Framework supports: [time as number](../appendix/time-format.md#time-as-number), [time as time string](../appendix/time-format.md#time-as-time-string) or [time as "timer" string](../appendix/time-format.md#time-as-timer-string). Integers and floats are considered to be seconds. | `42` (42 seconds)<br>`1 minute 2 seconds`<br>`01:02` (same as above) |
+| [timedelta](https://docs.python.org/library/datetime.html#datetime.timedelta) |  |  | [str](https://docs.python.org/library/functions.html#func-str), [int](https://docs.python.org/library/functions.html#int), [float](https://docs.python.org/library/functions.html#float) | Strings are expected to represent a time interval in one of the time formats Robot Framework supports: [time as number](../appendix/time_format.md#time-as-number), [time as time string](../appendix/time_format.md#time-as-time-string) or [time as "timer" string](../appendix/time_format.md#time-as-timer-string). Integers and floats are considered to be seconds. | `42` (42 seconds)<br>`1 minute 2 seconds`<br>`01:02` (same as above) |
 | [Path](https://docs.python.org/library/pathlib.html) | [PathLike](https://docs.python.org/library/os.html#os.PathLike) |  | [str](https://docs.python.org/library/functions.html#func-str) | Strings are converted to [pathlib.Path](https://docs.python.org/library/pathlib.html) objects. On Windows `/` is converted to `\`{.codesc} automatically.<br>New in Robot Framework 6.0. | `/tmp/absolute/path`<br>`relative/path/to/file.ext`<br>`name.txt` |
 | [Enum](https://docs.python.org/library/enum.html#enum.Enum) |  |  | [str](https://docs.python.org/library/functions.html#func-str) | The specified type must be an enumeration (a subclass of [Enum](https://docs.python.org/library/enum.html#enum.Enum) or [Flag](https://docs.python.org/library/enum.html#enum.Flag)) and given arguments must match its member names.<br>Matching member names is case, space, underscore and hyphen insensitive, but exact matches have precedence over normalized matches. Ignoring hyphens is new in Robot Framework 7.0.<br>Enumeration documentation and members are shown in documentation generated by [Libdoc](libdoc.md#libdoc) automatically. | .. sourcecode:: python<br>class Direction(Enum): """Move direction.""" NORTH = auto() NORTH_WEST = auto()<br>def kw(arg: Direction): ...<br>`NORTH` (Direction.NORTH)<br>`north west` (Direction.NORTH_WEST) |
 | [IntEnum](https://docs.python.org/library/enum.html#enum.IntEnum) |  |  | [str](https://docs.python.org/library/functions.html#func-str), [int](https://docs.python.org/library/functions.html#int) | The specified type must be an integer based enumeration (a subclass of [IntEnum](https://docs.python.org/library/enum.html#enum.IntEnum) or [IntFlag](https://docs.python.org/library/enum.html#enum.IntFlag)) and given arguments must match its member names or values.<br>Matching member names works the same way as with `Enum`. Values can be given as integers and as strings that can be converted to integers.<br>Enumeration documentation and members are shown in documentation generated by [Libdoc](libdoc.md#libdoc) automatically.<br>New in Robot Framework 4.1. | .. sourcecode:: python<br>class PowerState(IntEnum): """Turn system ON or OFF.""" OFF = 0 ON = 1<br>def kw(arg: PowerState): ...<br>`OFF` (PowerState.OFF)<br>`1` (PowerState.ON) |
@@ -1951,7 +1951,7 @@ arguments keywords accept. This is especially problematic when creating
 library documentation with [Libdoc](libdoc.md#libdoc) and when using external tools like [RIDE](https://github.com/robotframework/RIDE).
 The easiest way to avoid this problem is decorating the
 decorator itself using [functools.wraps](https://pypi.org/project/decorator/). Other solutions include using
-external modules like [decorator](https://wrapt.readthedocs.io) and [wrapt](../syntax/user-keywords.md#embedding-arguments-into-keyword-name) that allow creating fully
+external modules like [decorator](https://wrapt.readthedocs.io) and [wrapt](../syntax/user_keywords.md#embedding-arguments-into-keyword-name) that allow creating fully
 signature-preserving decorators.
 
 !!! note
@@ -1961,11 +1961,11 @@ signature-preserving decorators.
 ### Embedding arguments into keyword names
 
 Library keywords can also accept *embedded arguments* the same way as
-[user keywords](../syntax/user-keywords.md#creating-user-keywords). This section mainly covers the Python syntax to use to
+[user keywords](../syntax/user_keywords.md#creating-user-keywords). This section mainly covers the Python syntax to use to
 create such keywords, the embedded arguments syntax itself is covered in
 detail as part of [user keyword documentation](#setting-custom-name).
 
-Library keywords with embedded arguments need to have a [custom name](../syntax/user-keywords.md#argument-conversion-with-embedded-arguments) that
+Library keywords with embedded arguments need to have a [custom name](../syntax/user_keywords.md#argument-conversion-with-embedded-arguments) that
 is typically set using the [@keyword decorator](#keyword-decorator). Values matching embedded
 arguments are passed to the function or method implementing the keyword as
 positional arguments. If the function or method accepts more arguments, they
@@ -2687,7 +2687,7 @@ technical for some users. Another alternative is using Robot
 Framework's own documentation tool [Libdoc](libdoc.md#libdoc). This tool can
 create a library documentation from libraries
 using the static library API, such as the ones above, but it also handles
-libraries using the [dynamic library API](dynamic.md#dynamic-library-api) as well as [resource files](../syntax/resource-files.md#resource-files).
+libraries using the [dynamic library API](dynamic.md#dynamic-library-api) as well as [resource files](../syntax/resource_files.md#resource-files).
 
 The first logical line of a keyword documentation, until the first empty line,
 is used for a special purpose and should contain a short overall description
@@ -2699,7 +2699,7 @@ using [Google Style](../syntax/data.md#style) documentation conventions. The sam
 supported also by many other documentation tools and IDEs.
 
 By default documentation is considered to follow Robot Framework's
-[documentation formatting](../appendix/doc-format.md#documentation-formatting) rules. This simple format allows often used
+[documentation formatting](../appendix/doc_format.md#documentation-formatting) rules. This simple format allows often used
 styles like `*bold*` and `_italic_`, tables, lists, links, etc.
 It is possible to use also [Markdown](https://en.wikipedia.org/wiki/Markdown), [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText), HTML and plain
 text formats. See the [Documentation format](#documentation-format) section for information how to
@@ -2764,7 +2764,7 @@ line of the documentation. For example, `*DEPRECATED*`, `*DEPRECATED.*`, and
 When a deprecated keyword is executed, a deprecation warning is logged and
 the warning is shown also in [the console and the Test Execution Errors
 section in log files](#documenting-libraries). The deprecation warning starts with text `Keyword
-'<name>' is deprecated.` and has rest of the [short documentation](../syntax/user-keywords.md#user-keyword-name-and-documentation) after
+'<name>' is deprecated.` and has rest of the [short documentation](../syntax/user_keywords.md#user-keyword-name-and-documentation) after
 the deprecation marker, if any, afterwards. For example, if the following
 keyword is executed, there will be a warning like shown below in the log file.
 

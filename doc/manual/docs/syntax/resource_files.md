@@ -63,7 +63,7 @@ taken into use.
 
 ### Documenting resource files
 
-Keywords created in a resource file can be [documented](user-keywords.md#user-keyword-name-and-documentation) using
+Keywords created in a resource file can be [documented](user_keywords.md#user-keyword-name-and-documentation) using
 *[Documentation]*{.setting} setting. The resource file itself can have
 *Documentation*{.setting} in the Setting section similarly as [suites](suites.md#suite-name).
 

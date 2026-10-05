@@ -3,7 +3,7 @@
 Robot Framework test cases are executed from the command line, and the
 end result is, by default, an [output file](results.md#output-file) in XML format and an HTML
 [report](results.md#report-file) and [log](results.md#log-file). After the execution, output files can be combined and
-otherwise [post-processed](post-processing.md#post-processing-outputs) with the Rebot tool.
+otherwise [post-processed](post_processing.md#post-processing-outputs) with the Rebot tool.
 
 <a id="executing-test-cases"></a>
 
@@ -24,7 +24,7 @@ python path/to/robot/ [options] data
 ```
 
 Execution is normally started using the `robot` command created as part of
-[installation](../appendix/doc-format.md#installation). Alternatively it is possible to execute the installed `robot`
+[installation](../appendix/doc_format.md#installation). Alternatively it is possible to execute the installed `robot`
 module using the selected Python interpreter. This is especially convenient
 if Robot Framework has been installed under multiple Python versions.
 Finally, if you know where the installed `robot` directory exists, it can
@@ -257,7 +257,7 @@ from highest to lowest, is `AND`, `OR` and `NOT`:
 
 Environment variables `ROBOT_OPTIONS` and `REBOT_OPTIONS` can be
 used to specify default options for [test execution](#starting-test-execution) and [result
-post-processing](post-processing.md#post-processing-outputs), respectively. The options and their values must be
+post-processing](post_processing.md#post-processing-outputs), respectively. The options and their values must be
 defined as a space separated list and they are placed in front of any
 explicit options on the command line. The main use case for these
 environment variables is setting global default values for certain options to
@@ -346,7 +346,7 @@ example, in continuous integration servers where post-processing of results
 is needed before the overall status of execution can be determined.
 
 !!! note
-    Same return codes are also used with [Rebot](post-processing.md#rebot).
+    Same return codes are also used with [Rebot](post_processing.md#rebot).
 
 !!! note
     When [getting help and version information](#getting-help-and-version-information), the `--nostatusrc`{.option}
@@ -543,7 +543,7 @@ they are easier to understand than the short names.
 ### Shell script example
 
 In this example, the same web tests in the `login` directory are executed
-with different browsers and the results combined afterwards using [Rebot](post-processing.md#rebot).
+with different browsers and the results combined afterwards using [Rebot](post_processing.md#rebot).
 The script also accepts command line options itself and simply forwards them
 to the `robot` command using the handy `$*` variable:
 

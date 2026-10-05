@@ -41,7 +41,7 @@ already in the second example above, and it is explained in detail
 [later in this section](#user-keyword-arguments), similarly as [user keyword return
 values](#user-keyword-return-values).
 
-User keywords can be created in [suite files](suites.md#suite-files), [resource files](resource-files.md#resource-files),
+User keywords can be created in [suite files](suites.md#suite-files), [resource files](resource_files.md#resource-files),
 and [suite initialization files](suites.md#suite-initialization-files). Keywords created in resource
 files are available for files using them, whereas other keywords are
 only available in the files where they are created.
@@ -93,7 +93,7 @@ User keywords can have a documentation that is set with the
 splitting to multiple lines, and other features as [test case documentation](tests.md#test-case-name-and-documentation).
 This setting documents the user keyword in the test data. It is also shown
 in a more formal keyword documentation, which the [Libdoc](../extend/libdoc.md#libdoc) tool can create
-from [resource files](resource-files.md#resource-files). Finally, the first logical row of the documentation,
+from [resource files](resource_files.md#resource-files). Finally, the first logical row of the documentation,
 until the first empty row, is shown as a keyword documentation in [test logs](../execution/results.md#log-file).
 
 ```robotframework

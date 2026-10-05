@@ -11,7 +11,7 @@ Documentation can be created for:
 
 - libraries implemented using the normal static library [API](#python-libraries),
 - libraries using the [dynamic API](#dynamic-libraries), including remote libraries,
-- [resource files](../syntax/resource-files.md#resource-files),
+- [resource files](../syntax/resource_files.md#resource-files),
 - [suite files](../syntax/suites.md#suite-files), and
 - [suite initialization files](../syntax/suites.md#suite-initialization-files).
 
@@ -158,7 +158,7 @@ in HTML format. This format is thus familiar for most people who have used
 Robot Framework. A simple example can be seen below, and it has been generated
 based on the example found a [bit later in this section](#python-libraries).
 
-![Figure](ExampleLibrary.png)
+![Figure](assets/example_library.png)
 
 The HTML documentation starts with general library introduction, continues
 with a section about configuring the library when it is imported (when
@@ -362,7 +362,7 @@ fails and an additional dialog is opened for defining the error message.
 
 This section discusses writing documentation for [Python](#python-libraries) based test
 libraries that use the static library API as well as for [dynamic libraries](#dynamic-libraries)
-and [resource files](#resource-file-documentation). [Creating test libraries](libraries.md#creating-test-libraries) and [resource files](../syntax/resource-files.md#resource-files) is
+and [resource files](#resource-file-documentation). [Creating test libraries](libraries.md#creating-test-libraries) and [resource files](../syntax/resource_files.md#resource-files) is
 described in more details elsewhere in the User Guide.
 
 ### Python libraries
@@ -380,7 +380,7 @@ like can be seen [above](#libdoc-html-documentation), and there are also [bit lo
 the end of this chapter.
 
 ```python
---8<-- "extend/examples/ExampleLibrary.py"
+--8<-- "extend/assets/example_library.py"
 ```
 
 !!! tip
@@ -431,7 +431,7 @@ class TestLibrary:
 Keywords in resource files can have documentation using
 *[Documentation]*{.setting} setting, and this documentation is also used by
 Libdoc. First line of the documentation (until the first
-[implicit newline](../appendix/doc-format.md#newlines) or explicit `\n`) is considered to be the short
+[implicit newline](../appendix/doc_format.md#newlines) or explicit `\n`) is considered to be the short
 documentation similarly as with test libraries.
 
 Also the resource file itself can have *Documentation*{.setting} in the
@@ -471,7 +471,7 @@ values are `ROBOT` (default), `MARKDOWN`, `reST`, `HTML` and `TEXT`.
 ### Robot Framework documentation syntax
 
 Robot Framework's own documentation syntax is thoroughly documented in the
-[Robot Framework format](../appendix/doc-format.md#robot-framework-format) appendix. Its most important features are
+[Robot Framework format](../appendix/doc_format.md#robot-framework-format) appendix. Its most important features are
 formatting using `*bold*` and `_italics_`, custom links and
 automatic conversion of URLs to links, and the possibility to create tables and
 pre-formatted text blocks (useful for examples). If documentation gets longer,
@@ -559,7 +559,7 @@ documentation, README files, and technical content across the software
 development industry. There are various slightly different Markdown flavors,
 but the basic syntax works the same way across all tools. The following
 example illustrates the most important features, and details about the
-supported syntax can be from the [Markdown format](../appendix/doc-format.md#markdown-format) appendix.
+supported syntax can be from the [Markdown format](../appendix/doc_format.md#markdown-format) appendix.
 
 ````python
 """Example library using Markdown format.
@@ -591,7 +591,7 @@ needed, the [Pygments](https://pygments.org/) module must be installed as well.
 All other documentation formats supported by Libdoc support [internal linking](#internal-linking)
 using backticks like ``Linking to `My Keyword` works``{.codesc}. This kind
 of linking is very convenient and it works also with Markdown, but standard
-Markdown [reference links](../appendix/doc-format.md#reference-links) like `Linking to [My Keyword] works` are used
+Markdown [reference links](../appendix/doc_format.md#reference-links) like `Linking to [My Keyword] works` are used
 instead.
 
 When using Markdown, it is possible to generate table of contents using
@@ -693,7 +693,7 @@ Libdoc supports internal linking to keywords, to used types and to different
 sections in the documentation.
 
 The link syntax varies depending on the documentation format that is used.
-With Markdown linking is done using normal Markdown [reference links](../appendix/doc-format.md#reference-links) like
+With Markdown linking is done using normal Markdown [reference links](../appendix/doc_format.md#reference-links) like
 `Linking to [target]` and with all others the target needs to be surrounded
 with backtick characters like `` Linking to `target` ``{.codesc}. The actual
 targets are the same regardless the documentation format, though.
@@ -758,7 +758,7 @@ shown in the example of the next section.
 
 ### Linking to custom sections
 
-Robot Framework's [own documentation format](../appendix/doc-format.md#robot-framework-format) and [Markdown format](../appendix/doc-format.md#markdown-format) both support
+Robot Framework's [own documentation format](../appendix/doc_format.md#robot-framework-format) and [Markdown format](../appendix/doc_format.md#markdown-format) both support
 section headers, and headers used in the library or resource file introduction
 automatically create link targets. The example below illustrates linking both to
 automatic and custom sections:
@@ -889,7 +889,7 @@ and extra indentation is preserved.
 
 The specification says that with `*varargs` and `**kwargs` the leading `*` and `**`
 should be included, but with Robot Framework both including and excluding them is
-fine. When documenting [user keyword arguments](../syntax/user-keywords.md#user-keyword-arguments), it is possible to omit `${}`,
+fine. When documenting [user keyword arguments](../syntax/user_keywords.md#user-keyword-arguments), it is possible to omit `${}`,
 `@{}` and `&{}` decoration.
 
 Possible argument types in the documentation like `name (int): Example` are
@@ -1028,24 +1028,24 @@ and that is handled the same way as [formatting elsewhere in the documentation](
 ## Libdoc examples
 
 The following examples illustrates how to use the most important
-[documentation formatting](../appendix/doc-format.md#documentation-formatting) possibilities, [internal linking](#internal-linking), and so on.
+[documentation formatting](../appendix/doc_format.md#documentation-formatting) possibilities, [internal linking](#internal-linking), and so on.
 
 ### Using Robot Framework format
 
 ```python
---8<-- "extend/examples/LoggingLibrary.py"
+--8<-- "extend/assets/logging_library.py"
 ```
 
-[Click here](examples/LoggingLibrary.html) to see how the generated documentation looks like.
+[Click here](assets/logging_library.html) to see how the generated documentation looks like.
 
 
 ### Using Markdown
 
 ```python
---8<-- "extend/examples/LoggingLibraryMarkdown.py"
+--8<-- "extend/assets/logging_library_markdown.py"
 ```
 
-[Click here](examples/LoggingLibraryMarkdown.html) to see how the generated documentation looks like.
+[Click here](assets/logging_library_markdown.html) to see how the generated documentation looks like.
 
 
 ### Standard library documentation

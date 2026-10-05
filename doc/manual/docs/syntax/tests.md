@@ -18,7 +18,7 @@ and the differences are explained in the [Creating tasks](tasks.md#creating-task
 
 Test cases are constructed in test case sections from the available
 keywords. Keywords can be imported from [test libraries](libraries.md#using-test-libraries) or [resource
-files](resource-files.md#resource-files), or created in the [keyword section](user-keywords.md#creating-user-keywords) of the test case file
+files](resource_files.md#resource-files), or created in the [keyword section](user_keywords.md#creating-user-keywords) of the test case file
 itself.
 
 The first column in the test case section contains test case names. A
@@ -28,7 +28,7 @@ an error to have something between the section headers and the first
 test.
 
 The second column normally has keyword names. An exception to this rule
-is [setting variables from keyword return values](user-keywords.md#user-keyword-return-values), when the second and
+is [setting variables from keyword return values](user_keywords.md#user-keyword-return-values), when the second and
 possibly also the subsequent columns contain variable names and a keyword
 name is located after them. In either case, columns after the keyword name
 contain possible arguments to the specified keyword.
@@ -126,7 +126,7 @@ test case specific settings listed earlier.
 The earlier examples have already demonstrated keywords taking
 different arguments, and this section discusses this important
 functionality more thoroughly. How to actually implement [user
-keywords](user-keywords.md#user-keyword-arguments) and [library keywords](../extend/libraries.md#keyword-arguments) with different arguments is
+keywords](user_keywords.md#user-keyword-arguments) and [library keywords](../extend/libraries.md#keyword-arguments) with different arguments is
 discussed in separate sections.
 
 Keywords can accept zero or more arguments, and some arguments may
@@ -232,7 +232,7 @@ means that if you have an argument `arg`, you must use it like
 works.  The latter means that spaces are not allowed before the `=`
 sign, and possible spaces after it are considered part of the given value.
 
-When the named argument syntax is used with [user keywords](user-keywords.md#creating-user-keywords), the argument
+When the named argument syntax is used with [user keywords](user_keywords.md#creating-user-keywords), the argument
 names must be given without the `${}` decoration. For example, user
 keyword with arguments `${arg1}=first, ${arg2}=second` must be used
 like `arg2=override`.
@@ -298,7 +298,7 @@ makes the situation more explicit, it may nevertheless be a good idea.
 As already explained, the named argument syntax works with keywords. In
 addition to that, it also works when [importing libraries](libraries.md#importing-libraries).
 
-Naming arguments is supported by [user keywords](user-keywords.md#creating-user-keywords) and by most [test libraries](libraries.md#using-test-libraries).
+Naming arguments is supported by [user keywords](user_keywords.md#creating-user-keywords) and by most [test libraries](libraries.md#using-test-libraries).
 The only exceptions are Python keywords explicitly using [positional-only arguments](../extend/libraries.md#positional-only-arguments).
 
 #### Named arguments example
@@ -334,7 +334,7 @@ specified in the signature of the keyword.
 Free named arguments are supported by same keyword types than [normal named
 arguments](#where-named-arguments-are-supported). How keywords specify that they accept free named arguments
 depends on the keyword type. For example, [Python based keywords](../extend/libraries.md#free-keyword-arguments-kwargs) simply use
-`**kwargs` and [user keywords](user-keywords.md#free-named-arguments-with-user-keywords) use `&{kwargs}`.
+`**kwargs` and [user keywords](user_keywords.md#free-named-arguments-with-user-keywords) use `&{kwargs}`.
 
 Free named arguments support variables similarly as [named arguments](#named-arguments-with-variables). In practice that means that variables
 can be used both in names and values, but the escape sign must always be
@@ -365,7 +365,7 @@ See [Free keyword arguments (**kwargs)](../extend/libraries.md#free-keyword-argu
 libraries](../extend/libraries.md#creating-test-libraries) for more information about using the free named arguments syntax
 in your custom test libraries.
 
-As the second example, let's create a wrapper [user keyword](user-keywords.md#creating-user-keywords) for running the
+As the second example, let's create a wrapper [user keyword](user_keywords.md#creating-user-keywords) for running the
 `program.py` in the above example. The wrapper keyword *Run Program*{.name}
 accepts all positional and named arguments and passes them forward to
 *Run Process*{.name} along with the name of the command to execute.
@@ -394,7 +394,7 @@ For most parts named-only arguments work the same way as [named arguments](#name
 The main difference is that libraries implemented with Python 2 using
 the [static library API](../extend/libraries.md#creating-keywords) [do not support this syntax](../extend/libraries.md#keyword-only-arguments).
 
-As an example of using the [named-only arguments with user keywords](user-keywords.md#named-only-arguments-with-user-keywords), here
+As an example of using the [named-only arguments with user keywords](user_keywords.md#named-only-arguments-with-user-keywords), here
 is a variation of the *Run Program*{.name} in the above [free named argument
 examples](#free-named-argument-examples) that only supports configuring `shell`:
 
@@ -414,7 +414,7 @@ Run Program
 
 A totally different approach to specify arguments is embedding them
 into keyword names. This syntax is supported by both [test library keywords](../extend/libraries.md#embedding-arguments-into-keyword-names)
-and [user keywords](user-keywords.md#embedding-arguments-into-keyword-name).
+and [user keywords](user_keywords.md#embedding-arguments-into-keyword-name).
 
 ## Failures
 
@@ -434,7 +434,7 @@ some keywords allow configuring them.
 In some circumstances, for example when continuable failures are used,
 a test case can fail multiple times. In that case the final error message
 is got by combining the individual errors. Very long error messages are
-[automatically cut from the middle](../execution/results.md#limiting-error-message-length-in-reports) to keep [reports](../execution/post-processing.md#creating-reports-logs-and-output-files) easier to read, but
+[automatically cut from the middle](../execution/results.md#limiting-error-message-length-in-reports) to keep [reports](../execution/post_processing.md#creating-reports-logs-and-output-files) easier to read, but
 full error messages are always visible in [log files](../execution/results.md#log) as messages of
 the failed keywords.
 
@@ -484,7 +484,7 @@ The *[Documentation]*{.setting} setting allows setting free form
 documentation for a test case. That text is shown in the command line
 output and in the resulting logs and reports.
 If documentation gets long, it can be [split into multiple rows](data.md#dividing-data-to-several-rows).
-It is possible to use simple [HTML formatting](../appendix/doc-format.md#documentation-formatting) and [variables](variables.md#variables) can
+It is possible to use simple [HTML formatting](../appendix/doc_format.md#documentation-formatting) and [variables](variables.md#variables) can
 be used to make the documentation dynamic. Possible non-existing
 variables are left unchanged.
 
@@ -533,7 +533,7 @@ for test suites.
 Name of the metadata is the first argument given to the *[Metadata]*{.setting}
 setting and the remaining arguments specify its value. The value is handled
 similarly as [test case documentation](#test-case-name-and-documentation), which means that it supports
-[HTML formatting](../appendix/doc-format.md#documentation-formatting) and [variables](variables.md#variables), and that longer values can be [split into
+[HTML formatting](../appendix/doc_format.md#documentation-formatting) and [variables](variables.md#variables), and that longer values can be [split into
 multiple rows](data.md#dividing-data-to-several-rows). A test case can have any number of *[Metadata]*{.setting}
 settings, and each of them adds one name-value pair.
 
@@ -561,12 +561,12 @@ and other tools that process execution results.
 ## Tagging test cases
 
 Using tags in Robot Framework is a simple, yet powerful mechanism for
-classifying test cases and also [user keywords](user-keywords.md#creating-user-keywords). Tags are free text and
+classifying test cases and also [user keywords](user_keywords.md#creating-user-keywords). Tags are free text and
 Robot Framework itself has no special meaning for them except for the
 [reserved tags](#reserved-tags) discussed below. Tags can be used at least for the following
 purposes:
 
-- They are shown in test [reports](../execution/post-processing.md#creating-reports-logs-and-output-files), [logs](../execution/results.md#splitting-logs) and, of course, in the test
+- They are shown in test [reports](../execution/post_processing.md#creating-reports-logs-and-output-files), [logs](../execution/results.md#splitting-logs) and, of course, in the test
   data, so they provide metadata to test cases.
 - [Statistics](../execution/results.md#configuring-statistics) about test cases (total, passed, failed and skipped) are
   automatically collected based on them.
@@ -756,7 +756,7 @@ to be added in the future.
 : Mark test to be [unconditionally excluded](../execution/configuration.md#by-tag-names).
 
 `robot:private`
-: Mark keyword to be [private](user-keywords.md#private-user-keywords).
+: Mark keyword to be [private](user_keywords.md#private-user-keywords).
 
 `robot:no-dry-run`
 : Mark keyword not to be executed in the [dry run](../execution/configuration.md#dry-run) mode.
@@ -784,7 +784,7 @@ normal keywords with possible arguments.
 
 A setup and a teardown are always a single keyword. If they need to take care
 of multiple separate tasks, it is possible to create higher-level [user
-keywords](user-keywords.md#user-keyword-arguments) for that purpose. An alternative solution is executing multiple
+keywords](user_keywords.md#user-keyword-arguments) for that purpose. An alternative solution is executing multiple
 keywords using the [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword *Run Keywords*{.name}.
 
 The test teardown is special in two ways. First of all, it is executed also
@@ -935,7 +935,7 @@ test with multiple iterations is:
 ### Templates with embedded arguments
 
 Templates support a variation of
-the [embedded argument syntax](user-keywords.md#embedded-argument-syntax). With templates this syntax works so
+the [embedded argument syntax](user_keywords.md#embedded-argument-syntax). With templates this syntax works so
 that if the template keyword has variables in its name, they are considered
 placeholders for arguments and replaced with the actual arguments
 used with the template. The resulting keyword is then used without positional
@@ -1047,7 +1047,7 @@ finally it is verified that the system behaved as expected
 
 Another style to write test cases is the *data-driven* approach where
 test cases use only one higher-level keyword, often created as a
-[user keyword](user-keywords.md#creating-user-keywords), that hides the actual test workflow. These tests are
+[user keyword](user_keywords.md#creating-user-keywords), that hides the actual test workflow. These tests are
 very useful when there is a need to test the same scenario with
 different input and/or output data. It would be possible to repeat the
 same keyword with every test, but the [test template](#test-templates) functionality
@@ -1133,4 +1133,4 @@ the same keyword with different prefixes. For example, *Welcome page should be o
 #### Embedding data to keywords
 
 When writing concrete examples it is useful to be able to pass actual data to
-keyword implementations. This can be done by [embedding arguments into keyword name](user-keywords.md#embedding-arguments-into-keyword-name).
+keyword implementations. This can be done by [embedding arguments into keyword name](user_keywords.md#embedding-arguments-into-keyword-name).

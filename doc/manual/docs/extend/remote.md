@@ -30,7 +30,7 @@ servers communicate using a simple [remote protocol](#remote-protocol) on top of
 XML-RPC channel.  The high level architecture of all this is
 illustrated in the picture below:
 
-![Robot Framework architecture with Remote library](remote.png)
+![Robot Framework architecture with Remote library](assets/remote.png)
 
 *Robot Framework architecture with Remote library*
 
@@ -62,7 +62,7 @@ that the Remote library uses if no address is given.
 The last example above shows how to give a custom timeout to the Remote library
 as an optional second argument. The timeout is used when initially connecting
 to the server and if a connection accidentally closes. Timeout can be
-given in Robot Framework [time format](../appendix/time-format.md#time-format) like `60s` or `2 minutes 10 seconds`.
+given in Robot Framework [time format](../appendix/time_format.md#time-format) like `60s` or `2 minutes 10 seconds`.
 The default timeout is typically several minutes, but it depends on the
 operating system and its configuration. Notice that setting a timeout that
 is shorter than keyword execution time will interrupt the keyword.

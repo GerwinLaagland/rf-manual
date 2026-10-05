@@ -1,7 +1,7 @@
 # Command line options
 
 This appendix lists all the command line options that are available
-when [executing test cases](../execution/basics.md#executing-test-cases)  and when [post-processing outputs](../execution/post-processing.md#post-processing-outputs).
+when [executing test cases](../execution/basics.md#executing-test-cases)  and when [post-processing outputs](../execution/post_processing.md#post-processing-outputs).
 Also environment variables affecting execution and post-processing
 are listed.
 
@@ -62,7 +62,7 @@ are listed.
 :   Sets [individual variables](../syntax/variables.md#command-line-variables).
 
 `-V, --variablefile <path:args>`{.option}
-:   Sets variables using [variable files](../syntax/variable-files.md#variable-files).
+:   Sets variables using [variable files](../syntax/variable_files.md#variable-files).
 
 `-d, --outputdir <dir>`{.option}
 :   Defines where to [create result files](../execution/results.md#output-directory).
@@ -205,7 +205,7 @@ are listed.
 :   Turn on [generic automation](../execution/tasks.md#task-execution) mode.
 
 `-R, --merge`{.option}
-:   Changes result combining behavior to [merging](../execution/post-processing.md#merging-results).
+:   Changes result combining behavior to [merging](../execution/post_processing.md#merging-results).
 
 `-N, --name <name>`{.option}
 :   [Sets the name](../execution/configuration.md#setting-suite-name) of the top level test suite.
@@ -313,7 +313,7 @@ are listed.
 :   Activate [programmatic modification of results](../execution/results.md#programmatic-modification-of-results).
 
 `--console <verbose|quiet|none|custom>`{.option}
-:   [Controlling Rebot console output](../execution/post-processing.md#controlling-rebot-console-output). Also accepts [custom console loggers](../execution/configuration.md#custom-console-loggers).
+:   [Controlling Rebot console output](../execution/post_processing.md#controlling-rebot-console-output). Also accepts [custom console loggers](../execution/configuration.md#custom-console-loggers).
 
 `--quiet`{.option}
 :   Shortcut for `--console quiet`.

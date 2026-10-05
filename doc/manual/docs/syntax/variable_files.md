@@ -32,7 +32,7 @@ method. Variable files can also be created as [YAML](#variable-file-as-yaml) and
 
 All test data files can import variable files using the *Variables*{.setting}
 setting in the Setting section. Variable files are typically imported using
-a path to the file same way as [resource files are imported](resource-files.md#taking-resource-files-into-use) using
+a path to the file same way as [resource files are imported](resource_files.md#taking-resource-files-into-use) using
 the *Resource*{.setting} setting. Similarly to resource files, the path to
 the imported variable file is considered relative to the directory where the
 importing file is, and if not found, it is searched from directories

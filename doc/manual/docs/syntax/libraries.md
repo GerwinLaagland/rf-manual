@@ -5,7 +5,7 @@
 Test libraries contain those lowest-level keywords, often called
 *library keywords*, which actually interact with the system under
 test. All test cases always use keywords from some library, often
-through higher-level [user keywords](user-keywords.md#creating-user-keywords). This section explains how to
+through higher-level [user keywords](user_keywords.md#creating-user-keywords). This section explains how to
 take test libraries into use and how to use the keywords they
 provide. [Creating test libraries](../extend/libraries.md#creating-test-libraries) is described in a separate
 section.
@@ -39,7 +39,7 @@ Library    ${LIBRARY}
 ```
 
 It is possible to import test libraries in [suite files](suites.md#suite-files),
-[resource files](resource-files.md#resource-files) and [suite initialization files](suites.md#suite-initialization-files). In all these
+[resource files](resource_files.md#resource-files) and [suite initialization files](suites.md#suite-initialization-files). In all these
 cases, all the keywords in the imported library are available in that
 file. With resource files, those keywords are also available in other
 files using them.

@@ -46,13 +46,81 @@ HTML log tables in `execution/basics.md` and `extend/libraries.md` need both
 Material wrappers (`md-typeset__scrollwrap` and `md-typeset__table`), a region name,
 and `tabindex="0"` on the scroll wrapper. Leave a blank line after HTML blocks.
 
+## Build options
+
+API and PDF generation are opt-in for fast local previews. Each generator logs
+its setting:
+
+| Environment variable | Default | Effect when set to `1` |
+| --- | --- | --- |
+| `GENERATE_API_DOCS` | Disabled | Generate Python API pages and their navigation. |
+| `GENERATE_PDF` | Disabled | Export the manual as a PDF, with links to online reference documentation. |
+
+Both publishing workflows enable both options. The legacy
+`DO_NOT_GENERATE_API_DOCS` override still disables API generation when non-empty.
+Fast previews show the API overview without links to omitted pages.
+See [the main README](../../README.md#optional-generate-api-documentation-and-pdf)
+for commands in Bash, PowerShell and Command Prompt. Restart `properdocs serve`
+after changing environment variables or the cached Python hook (`pdf.py`).
+
+## Manual PDF
+
+`pdf.py` exports the manual articles to `downloads/robot-framework-manual-<version>.pdf`
+in the version's site directory, for example `robot-framework-manual-7.5.pdf`.
+Local and `dev` builds use `robot-framework-manual-dev.pdf`.
+Python API and library keyword references stay
+online; their links remain in the PDF. Release labels follow the mike deployment
+version. Local and `dev` exports are labeled "Development edition".
+
+Publishing builds show one compact link in the left navigation with a download
+icon and file size. It has no `download` attribute, allowing browser PDF viewers
+to open it. Builds without a PDF hide the link.
+
+PDF export works on Windows, macOS and [Playwright-supported Linux distributions](https://playwright.dev/python/docs/intro#system-requirements).
+Python dependencies are included in the root `requirements.txt`. Before enabling
+export, install the PDF browser with the same command on each platform:
+
+```console
+python -m playwright install --only-shell chromium
+```
+
+On Linux, add `--with-deps` to install Chromium's system libraries as well, as the
+publishing workflows do. Ordinary documentation previews do not need Chromium.
+
+For a PDF-only build in PowerShell:
+
+```powershell
+$env:GENERATE_PDF = '1'
+properdocs build
+```
+
+In Bash, use `GENERATE_PDF=1 properdocs build`. Unset the variable for normal
+previews. Chromium is the default. Optionally, set `MANUAL_PDF_BROWSER_CHANNEL`
+to `chrome` or `msedge` to use an installed browser instead.
+
+Chromium prints one local HTML document using self-hosted fonts and
+`docs/assets/pdf.css`. The design follows the [RFCP syllabus](https://github.com/robotframework/robotframework-RFCP-syllabus/blob/main/tools/gen_pdf.robot):
+A4 paper, light colors, teal accents, OCR-A headings, a cover, linked contents and
+numbered footers. Contents and bookmarks follow the site's section hierarchy.
+Print rules expand tabs and disclosures, wrap examples, repeat table headings
+and allow long rows to continue across pages. Line-number gutters are omitted
+so wrapped code stays aligned.
+
+Run `python -m unittest discover -s doc/manual/tests -v` and check the exported
+contents, bookmarks, links, tables, examples and images after changes. Chromium
+adds accessibility tags; review reading order separately for PDF/UA conformance.
+Export time and file size are logged after each build.
+
+Publishing workflows run the regression tests before installing the PDF browser.
+They use setup-python's pip cache and install only Chromium's headless shell.
+
 ## Upgrading Material
 
 Last compatibility review: Material **9.8.1**. See the
 [header layout decision](https://github.com/pekkaklarck/manual/issues/30).
 
-Compare `partials/header.html` and `partials/javascripts/outdated.html`
-with the installed templates. Preserve the
+Compare `partials/header.html`, `partials/nav.html` and
+`partials/javascripts/outdated.html` with the installed templates. Preserve the
 outdated banner's URL base. Check DOM assumptions in `navigation.js` and selectors
 and offsets in `navigation.css`.
 

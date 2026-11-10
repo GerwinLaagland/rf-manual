@@ -63,8 +63,9 @@ working directory is the repository root containing `requirements.txt`.
 Example output:
 
     INFO    -  Building documentation...
+    INFO    -  Manual PDF generation: disabled (set GENERATE_PDF=1 to enable)
     INFO    -  Cleaning site directory
-    API doc generation takes some time. It can be disabled by setting the 'DO_NOT_GENERATE_API_DOCS' environment variable to a non-empty value.
+    INFO    -  API documentation generation: disabled (set GENERATE_API_DOCS=1 to enable)
     INFO    -  Documentation built in 11.84 seconds
     INFO    -  [22:03:18] Watching paths for changes: 'doc/manual/docs', 'properdocs.yml', 'INSTALL.md', 'src/robot',
             'doc/manual/overrides'
@@ -73,17 +74,50 @@ Example output:
 Open the [local preview](http://127.0.0.1:8000/manual/) in your browser.
 The preview updates as you modify the pages.
 
-#### Optional: speed up builds
+#### Optional: generate API documentation and PDF
 
-To speed up builds, disable API document generation:
+API and PDF generation are both disabled by default to keep local builds fast.
+Each build logs whether they are enabled and how to turn them on.
+To preview the generated API documentation:
 
-Linux (Bash)
+Linux/macOS (Bash)
 
-    DO_NOT_GENERATE_API_DOCS=True properdocs serve
+    GENERATE_API_DOCS=1 properdocs serve
+
+Windows (PowerShell)
+
+    $env:GENERATE_API_DOCS = '1'
+    properdocs serve
 
 Windows (Command Prompt)
 
-    set "DO_NOT_GENERATE_API_DOCS=True" && properdocs serve
+    set "GENERATE_API_DOCS=1" && properdocs serve
+
+To preview both the generated API documentation and the manual PDF, first
+[install the PDF browser](doc/manual/README.md#manual-pdf), then enable both:
+
+Linux/macOS (Bash)
+
+    GENERATE_API_DOCS=1 GENERATE_PDF=1 properdocs serve
+
+Windows (PowerShell)
+
+    $env:GENERATE_API_DOCS = '1'
+    $env:GENERATE_PDF = '1'
+    properdocs serve
+
+Windows (Command Prompt)
+
+    set "GENERATE_API_DOCS=1" && set "GENERATE_PDF=1" && properdocs serve
+
+Replace `properdocs serve` with `properdocs build` to build without starting the
+preview server. Restart an existing preview server after changing these variables.
+
+Both publishing workflows explicitly enable both options. The PDF links to online
+library keyword documentation and the Python API reference; it does not require
+API generation. Unset the variables to return to fast local
+builds. The older `DO_NOT_GENERATE_API_DOCS` variable is still honored: any
+non-empty value overrides `GENERATE_API_DOCS` and disables API generation.
 
 ### Stopping the preview server
 

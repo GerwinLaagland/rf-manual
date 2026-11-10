@@ -1,3 +1,4 @@
+beautifulsoup4>=4.13
 black  # Needed by mkdocstrings for formatting signatures
 mike
 mkdocs-ezglossary-plugin
@@ -7,6 +8,7 @@ mkdocs-literate-nav
 mkdocs-material[imaging]
 mkdocs-section-index
 mkdocstrings[python]
+playwright>=1.65
 properdocs
 
 telnetlib-313-and-up; python_version >= '3.13'

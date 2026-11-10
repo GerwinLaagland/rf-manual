@@ -446,3 +446,45 @@
   border-inline-start-color: rgb(var(--rf-accent-text));
   font-weight: 600;
 }
+
+/* A compact resource link inside the left navigation, following the syllabus.
+   Keep it visible when Material hides inactive top-level items on desktop. */
+.md-nav--primary > .md-nav__list > .rf-manual-pdf {
+  display: block;
+  margin-top: 0.8rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid rgb(var(--rf-700) / 0.25);
+}
+
+.md-nav--primary > .md-nav__list > .rf-manual-pdf > .rf-manual-pdf__link {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  font-family: var(--rf-ff-body);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.5;
+}
+
+.rf-manual-pdf__icon {
+  flex: 0 0 0.8rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-top: 0.12rem;
+}
+
+.rf-manual-pdf__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.rf-manual-pdf__text {
+  min-width: 0;
+}
+
+.rf-manual-pdf small {
+  display: block;
+  font-size: 0.6rem;
+  color: var(--md-default-fg-color--light);
+}

@@ -9,6 +9,9 @@ copyright: |
   &copy; 2026- <a href="https://robotframework.org/foundation" target="_blank"
   rel="noopener">Robot Framework Foundation</a>
 docs_dir: doc/manual/docs
+# API/PDF generation is opt-in; see README.md for the environment toggles.
+hooks:
+  - doc/manual/pdf.py
 watch:
   - INSTALL.md
   - src/robot/

@@ -114,6 +114,19 @@ Export time and file size are logged after each build.
 Publishing workflows run the regression tests before installing the PDF browser.
 They use setup-python's pip cache and install only Chromium's headless shell.
 
+## Example page bundles
+
+Keep example HTML, images, and source files beside their page's `index.md`.
+Screenshots with interactive HTML examples use Markdown image links to open
+the examples. Preserve the source's display widths with image attributes such as
+`{ width="500" }`; the theme scales images down on smaller screens. Keep log/report
+companion links relative to the same bundle.
+
+The Libdoc and execution artifact examples come from the
+[User Guide source at `7c1c9fb04`](https://github.com/robotframework/robotframework/tree/7c1c9fb04/doc/userguide/src).
+They are snapshots illustrating the accompanying screenshots; their generated
+HTML does not need to be regenerated during ordinary documentation builds.
+
 ## Upgrading Material
 
 Last compatibility review: Material **9.8.1**. See the
